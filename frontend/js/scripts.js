@@ -11,7 +11,7 @@
     var all_toggles = $('.qe-faq-toggle');
 
     all_toggles.removeClass('nojs active');
-    all_toggles.find('i.fa').removeClass('fa-minus-circle').addClass('fa-plus-circle');
+    all_toggles.find('i.fa').removeClass('fa-minus').addClass('fa-plus');
 
     /**
      * FAQs Toggles
@@ -22,15 +22,15 @@
 
         if('accordion' === qaef_object.style || 'accordion-grouped' === qaef_object.style ){
             parent_toggle.siblings().removeClass('active').find('.qe-toggle-content').slideUp('fast');
-            parent_toggle.siblings().find('i.fa').removeClass('fa-minus-circle').addClass('fa-plus-circle');
+            parent_toggle.siblings().find('i.fa').removeClass('fa-minus').addClass('fa-plus');
         }
         if (parent_toggle.hasClass('active')) {
 
-            $(this).find('i.fa').removeClass('fa-minus-circle').addClass('fa-plus-circle');
+            $(this).find('i.fa').removeClass('fa-minus').addClass('fa-plus');
             parent_toggle.removeClass('active').find('.qe-toggle-content').slideUp('fast');
         } else {
 
-            $(this).find('i.fa').removeClass('fa-plus-circle').addClass('fa-minus-circle');
+            $(this).find('i.fa').removeClass('fa-plus').addClass('fa-minus');
             parent_toggle.addClass('active').find('.qe-toggle-content').slideDown('fast');
         }
     });

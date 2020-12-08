@@ -246,7 +246,7 @@ class FAQs_Query extends Utilities {
 		if ( empty( $this->display ) || 'grouped' === $this->display ) {
 			$class = 'fa fa-question-circle';
 		} else {
-			$class = 'fa fa-minus-circle';
+			$class = 'fa fa-minus';
 		}
 
 		return '<i class="' . esc_attr( $class ) . '"></i> ';
@@ -274,10 +274,12 @@ class FAQs_Query extends Utilities {
 			<div class="qe-<?php echo esc_attr( $class ); ?>-title">
 				<h4>
 					<?php
-					echo wp_kses( $this->get_the_icon(), array( 'i' => array( 'class' => array() ) ) );
 					echo esc_html( get_the_title( $id ) );
 					?>
-				</h4>
+                </h4>
+                    <?php 
+                    echo wp_kses( $this->get_the_icon(), array( 'i' => array( 'class' => array() ) ) );
+                    ?>
 			</div>
 			<div class="qe-<?php echo esc_attr( $class ); ?>-content">
 				<?php
